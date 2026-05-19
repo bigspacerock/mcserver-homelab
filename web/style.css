@@ -1,82 +1,118 @@
-body {
-    font-family: 'Calibri', sans-serif;
-    background-color: rgb(156, 156, 156);
-    color: rgb(255, 255, 255); 
+:root{
+    --bg-page: #3d3d3d;
+    --bg-primary:#494f5b;
+    --bg-top:#11151C;
+    --bg-side:#19212E;
+    --bg-card:#202c40;
+
+    --button: #19212E;
+    --button-active: rgb(32, 37, 43);
+    --button-disabled: #2C374B;
+
+    --accent:#deff85;
+    --accent-hover:#272727;
+
+    --text-primary:#ffffff;
+    --text-secondary:#d5d5d5;
+
+    --border:#a8ccff;
+}
+
+html, body {
+    height: 100%;
     margin: 0;
 }
 
-.box {
-    width: 150px;
-    height: 100px;
-    background-color: rgb(92, 92, 92);
-}
-
-.app {
+body {
     display: flex;
+    font-family: 'Calibri', sans-serif;
+    
+    background-color: var(--bg-page);
+    margin: 0;
     height: 100vh;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 1px;
 }
 
-.main {
+/* LAYOUT */
+.layout {
     flex: 1;
-    justify-content: flex-start;
-    align-items: center;
+    display: flex;
+    gap: 1px;
+}
+
+.col { flex-direction: column; }
+.row { flex-direction: row; }
+.flex { display:flex; flex: 1}
+
+/* Top Frame */
+.upperframe {
+
 }
 
 .toppanel {
-    width: auto;
-    height: 15vw;
+    color: var(--text-primary);
+    background: var(--bg-top);
+    display: flex;
+    width: 100%;
+    height: 20px;
 }
 
-.sidepanel {
+.toolbar {
+    color: var(--text-primary);
+    background: var(--bg-side);
     display: flex;
-    width: 20vw;
-    height: auto;
-    background: rgb(46, 46, 46);
-    border-right: 5px rgb(54, 54, 54)0 solid;
-    align-content: space-evenly;
+    width: 100%;
+    height: 60px;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary)
+}
+
+
+/* Sidebar */
+.sidepanel {
+    background: var(--bg-side);
+    display: flex;
+    flex-shrink: 0;
     flex-direction: column;
+    width: 275px;
+
+    justify-content: flex-start;
     gap: 15px;
 }
 
-.sidebutton {
-    display: flex;
+.sidebox{
+    background-color: var(--bg-side);
     width: 100%;
-    height: 10%;
-    color: rgb(196, 196, 196);
-    background-color: rgb(25, 25, 25);
-    align-items: center;
-    justify-content: left;
+    height: 100px;
+    border-bottom: var(--bg-page) solid 1px;
+}
+
+.sidebutton {
+    /* Frame Adjustment */
+    background-color: var(--button);
+    border-style: none;
+    width: 100%;
+    height: 80px;
+    
+
+    /* Text Adjustment */
+    color: var(--text-primary);
     overflow: hidden;
     white-space: nowrap;
-    flex-shrink: 0;
-
-    font-size: 50px;
+    text-align: center;
+    font-size: 48px;
     font-family: "Calibri", "Comic Sans MS";
     font-weight: 700;
     font-variant: small-caps;
 }
-
-button {
-    width: 100px;
-    height: 50px;
-    box-sizing: border-box;
-}
-
-.btn {
-    background-color: rgb(62, 62, 62);
-    color: white;
-    border-radius: 1;
-    padding: 5px 5px;
-}
-
-.rounded {
-    border-radius: 10px;
-}
-
-.wake {
-    background-color: rgb(3, 55, 18);
-}
-
-.stop {
-    background-color: rgb(62, 22, 22);
+.sidebutton:active{
+    background-color: var(--button-active);
 }
