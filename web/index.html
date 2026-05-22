@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <title> Minecraft Server </title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <script>
+    if(sessionStorage.getItem("sidebarState") == "opened") { document.documentElement.classList.add("sidebar-open"); }
+  </script>
   <script type="text/javascript" src="app.js" defer></script>
 </head>
 
-<body> 
+<body>
   <nav id="sidebar" class="">
     <ul>
       <li>
         <button id="toggle-btn">
-          <svg class="icon"> <use href="icons.svg#icon-menu"></use></svg>
+          <svg class="icon">
+            <use href="icons.svg#icon-menu"></use>
+          </svg>
         </button>
       </li>
       <li>
-        <a href="index.html" title="Main Panel">
+        <a href="#main" title="Main Panel">
           <svg class="icon">
             <use href="icons.svg#icon-settings"></use>
           </svg>
@@ -28,7 +31,7 @@
         </a>
       </li>
       <li>
-        <a href="index.html" title="Server">
+        <a href="#server" title="Server">
           <svg class="icon">
             <use href="icons.svg#icon-database"></use>
           </svg>
@@ -36,7 +39,7 @@
         </a>
       </li>
       <li>
-        <a href="index.html" title="Mods">
+        <a href="#mods" title="Mods">
           <svg class="icon">
             <use href="icons.svg#icon-extension"></use>
           </svg>
@@ -44,7 +47,7 @@
         </a>
       </li>
       <li>
-        <a href="index.html" title="Plugins">
+        <a href="#plugins" title="Plugins">
           <svg class="icon">
             <use href="icons.svg#icon-power"></use>
           </svg>
@@ -52,7 +55,7 @@
         </a>
       </li>
       <li>
-        <a href="index.html" title="Config">
+        <a href="#config" title="Config">
           <svg class="icon">
             <use href="icons.svg#icon-settings"></use>
           </svg>
@@ -60,7 +63,7 @@
         </a>
       </li>
       <li>
-        <a href="index.html" class="bottom" title="Settings">
+        <a href="#settings" class="bottom" title="Settings">
           <svg class="icon">
             <use href="icons.svg#icon-settings"></use>
           </svg>
@@ -69,14 +72,10 @@
       </li>
     </ul>
   </nav>
-
   <main>
-    <div class="card container">
-      Console!
+    <div id="module" class="container">
     </div>
-
   </main>
-  
 </body>
 
 </html>

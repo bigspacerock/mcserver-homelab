@@ -1,7 +1,3 @@
 {
-  "liveServer.settings.useLocalIp": false,
-  "liveServer.settings.donotShowInfoMsg": false,
-  "liveServer.settings.mount": [
-
-  ]
+  "explorer.openEditors.sortOrder": "editorOrder"
 }
