@@ -1,29 +1,82 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <head>
-    <title> Minecraft Server </title>
-    <meta charset="UTF 8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title> Minecraft Server </title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script type="text/javascript" src="app.js" defer></script>
 </head>
 
-<body>
-    <header class="toppanel"> This is a topbar! </header> 
-    <div class="layout row">
-        <div class="sidepanel">
-            <div class="sidebox">Side Box</div>
-            <button class="sidebutton"> Main Panel</button>
-        </div>
-        <div class ="layout col">
-            <div class="toolbar">
-                
-            </div>
-        <main class="content">Nothing (yet) </main>
+<body> 
+  <nav id="sidebar" class="">
+    <ul>
+      <li>
+        <button id="toggle-btn">
+          <svg class="icon"> <use href="icons.svg#icon-menu"></use></svg>
+        </button>
+      </li>
+      <li>
+        <a href="index.html" title="Main Panel">
+          <svg class="icon">
+            <use href="icons.svg#icon-settings"></use>
+          </svg>
+          <span class=""> Main Panel </span>
+        </a>
+      </li>
+      <li>
+        <a href="index.html" title="Server">
+          <svg class="icon">
+            <use href="icons.svg#icon-database"></use>
+          </svg>
+          <span class=""> Server </span>
+        </a>
+      </li>
+      <li>
+        <a href="index.html" title="Mods">
+          <svg class="icon">
+            <use href="icons.svg#icon-extension"></use>
+          </svg>
+          <span class=""> Mod </span>
+        </a>
+      </li>
+      <li>
+        <a href="index.html" title="Plugins">
+          <svg class="icon">
+            <use href="icons.svg#icon-power"></use>
+          </svg>
+          <span class=""> Plugins </span>
+        </a>
+      </li>
+      <li>
+        <a href="index.html" title="Config">
+          <svg class="icon">
+            <use href="icons.svg#icon-settings"></use>
+          </svg>
+          <span class=""> Config </span>
+        </a>
+      </li>
+      <li>
+        <a href="index.html" class="bottom" title="Settings">
+          <svg class="icon">
+            <use href="icons.svg#icon-settings"></use>
+          </svg>
+          <span class=""> Settings </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="card container">
+      Console!
     </div>
-        
-    </div>
+
+  </main>
+  
 </body>
 
 </html>

@@ -1,118 +1,118 @@
-:root{
-    --bg-page: #3d3d3d;
-    --bg-primary:#494f5b;
-    --bg-top:#11151C;
-    --bg-side:#19212E;
-    --bg-card:#202c40;
+@import url(https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap);
+/* General Design */
+:root {
+    --bg-color: hsl(251, 10%, 22%);
+    --card-color: #201f25;
+    --accent-color: #34323d;
 
-    --button: #19212E;
-    --button-active: rgb(32, 37, 43);
-    --button-disabled: #2C374B;
-
-    --accent:#deff85;
-    --accent-hover:#272727;
-
-    --text-primary:#ffffff;
-    --text-secondary:#d5d5d5;
-
-    --border:#a8ccff;
+    --border-color: #3f3d45;
+    --text-color: #efefef;
 }
-
-html, body {
-    height: 100%;
+* {
     margin: 0;
+    padding: 0;
+    font: 500;
 }
-
+html {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.5rem;
+}
 body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    grid-template-columns: auto 1fr;
+}
+main {
+    display: grid;
+    grid-template-columns: 0.05fr 1fr 0.05fr;
+    grid-template-rows: 0.05fr 1fr 0.05fr;
+    overflow: hidden;
+    text-overflow: clip;
+}
+main .container {
+    grid-row: 2;
+    grid-column: 2;
+}
+/* Sidebar */
+#sidebar {
+    box-sizing: border-box;
+    border:none;
     display: flex;
-    font-family: 'Calibri', sans-serif;
-    
-    background-color: var(--bg-page);
-    margin: 0;
+    padding: 10px 0;
+    width: 200px;
+    height: 100vh;
+
+    background-color: var(--card-color);
+    flex-flow: column nowrap;
+    position: relative;
+
+    transition: width 250ms ease-out;
+    overflow: hidden;
+    text-overflow: clip;
+    text-wrap: nowrap;
+}
+/* Sidebar States */
+#sidebar.close {
+    width: 50px;
+}
+
+/* Sidebar List and List Elements */
+#sidebar ul {
+    display: flex;
     height: 100vh;
     flex-direction: column;
-    flex-shrink: 0;
-    gap: 1px;
+    list-style: none;
 }
-
-/* LAYOUT */
-.layout {
-    flex: 1;
+#sidebar>ul>li:first-child{
     display: flex;
-    gap: 1px;
+    justify-content: right;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-right: 10px;
 }
-
-.col { flex-direction: column; }
-.row { flex-direction: row; }
-.flex { display:flex; flex: 1}
-
-/* Top Frame */
-.upperframe {
-
+#sidebar>ul>li:last-child {
+    margin-top: auto;
 }
-
-.toppanel {
-    color: var(--text-primary);
-    background: var(--bg-top);
+/* Sidebar Links */
+#sidebar a {
     display: flex;
+    align-items: center;
     width: 100%;
-    height: 20px;
-}
+    height: 50px;
+    padding-left: 10px;
 
-.toolbar {
-    color: var(--text-primary);
-    background: var(--bg-side);
-    display: flex;
-    width: 100%;
-    height: 60px;
-}
-
-/* Content */
-.content {
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-primary)
-}
-
-
-/* Sidebar */
-.sidepanel {
-    background: var(--bg-side);
-    display: flex;
-    flex-shrink: 0;
-    flex-direction: column;
-    width: 275px;
-
-    justify-content: flex-start;
-    gap: 15px;
-}
-
-.sidebox{
-    background-color: var(--bg-side);
-    width: 100%;
-    height: 100px;
-    border-bottom: var(--bg-page) solid 1px;
-}
-
-.sidebutton {
-    /* Frame Adjustment */
     background-color: var(--button);
-    border-style: none;
-    width: 100%;
-    height: 80px;
     
-
-    /* Text Adjustment */
-    color: var(--text-primary);
-    overflow: hidden;
-    white-space: nowrap;
-    text-align: center;
-    font-size: 48px;
-    font-family: "Calibri", "Comic Sans MS";
-    font-weight: 700;
-    font-variant: small-caps;
+    gap: 1em;
+    
+    text-decoration-line: none;
+    color: var(--text-color);
 }
-.sidebutton:active{
-    background-color: var(--button-active);
+#sidebar button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
+/* Content */
+span.close {
+    display: none;
+}
+.card {
+    display: flex;
+    background-color: var(--card-color);
+    border: 3px solid var(--border-color);
+    justify-content: center;
+    align-items: center;
+}
+/* Icon */
+.icon {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    fill: #ffffff;
+}
+/* Text Adjustments */
