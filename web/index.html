@@ -1,34 +1,81 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-    <title> Minecraft Server </title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title> Minecraft Server </title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <script>
+    if(sessionStorage.getItem("sidebarState") == "opened") { document.documentElement.classList.add("sidebar-open"); }
+  </script>
+  <script type="text/javascript" src="app.js" defer></script>
 </head>
 
 <body>
-    <div class="app">
-        <aside class="toppanel">
-            
-        </aside>
-
-        <aside class="sidepanel">
-            <button class="sidebutton"> Power </button>
-            <button class="sidebutton"> Server </button>
-            <button class="sidebutton"> SSH Interface </button>
-            <button class="sidebutton"> Configuration </button>
-            <button class="sidebutton"> Users </button>
-            <button class="sidebutton"> Players </button>
-            <button class="sidebutton"> Other </button>
-            <button class="sidebutton"> Miscellanious </button>
-
-        </aside>
-        
-        <main class="main">
-            <div class="box"></div>
-        </main>
+  <nav id="sidebar" class="">
+    <ul>
+      <li>
+        <button id="toggle-btn">
+          <svg class="icon">
+            <use href="icons.svg#icon-menu"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <a href="#main" title="Main Panel">
+          <svg class="icon">
+            <use href="icons.svg#icon-settings"></use>
+          </svg>
+          <span class=""> Main Panel </span>
+        </a>
+      </li>
+      <li>
+        <a href="#server" title="Server">
+          <svg class="icon">
+            <use href="icons.svg#icon-database"></use>
+          </svg>
+          <span class=""> Server </span>
+        </a>
+      </li>
+      <li>
+        <a href="#mods" title="Mods">
+          <svg class="icon">
+            <use href="icons.svg#icon-extension"></use>
+          </svg>
+          <span class=""> Mod </span>
+        </a>
+      </li>
+      <li>
+        <a href="#plugins" title="Plugins">
+          <svg class="icon">
+            <use href="icons.svg#icon-power"></use>
+          </svg>
+          <span class=""> Plugins </span>
+        </a>
+      </li>
+      <li>
+        <a href="#config" title="Config">
+          <svg class="icon">
+            <use href="icons.svg#icon-settings"></use>
+          </svg>
+          <span class=""> Config </span>
+        </a>
+      </li>
+      <li>
+        <a href="#settings" class="bottom" title="Settings">
+          <svg class="icon">
+            <use href="icons.svg#icon-settings"></use>
+          </svg>
+          <span class=""> Settings </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <div id="module" class="container">
     </div>
+  </main>
 </body>
 
 </html>

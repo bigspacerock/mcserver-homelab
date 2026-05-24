@@ -1,82 +1,122 @@
-body {
-    font-family: 'Calibri', sans-serif;
-    background-color: rgb(156, 156, 156);
-    color: rgb(255, 255, 255); 
+@import url(https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap);
+/* General Design */
+:root {
+    --bg-color: hsl(251, 10%, 22%);
+    --card-color: #201f25;
+    --accent-color: #34323d;
+
+    --border-color: #3f3d45;
+    --text-color: #efefef;
+}
+* {
     margin: 0;
+    padding: 0;
+    font: 500;
 }
-
-.box {
-    width: 150px;
-    height: 100px;
-    background-color: rgb(92, 92, 92);
+html {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.5rem;
 }
+html.sidebar-open {
+    #sidebar {
+        width: 200px!important;
+    }
+}
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 
-.app {
+    grid-template-columns: auto 1fr;
+}
+main {
+    display: grid;
+    grid-template-columns: 0.05fr 1fr 0.05fr;
+    grid-template-rows: 0.05fr 1fr 0.05fr;
+    overflow: hidden;
+    text-overflow: clip;
+}
+main .container {
+    grid-row: 2;
+    grid-column: 2;
+}
+/* Sidebar */
+#sidebar {
+    box-sizing: border-box;
+    border:none;
+    display: flex;
+    padding: 10px 0;
+    width: 50px;
+    height: 100vh;
+
+    background-color: var(--card-color);
+    flex-flow: column nowrap;
+    position: relative;
+
+    transition: width 250ms ease-out;
+    overflow: hidden;
+    text-overflow: clip;
+    text-wrap: nowrap;
+}
+/* Sidebar States */
+#sidebar.opened {
+    width: 200px;
+}
+/* Sidebar List and List Elements */
+#sidebar ul {
     display: flex;
     height: 100vh;
-}
-
-.main {
-    flex: 1;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.toppanel {
-    width: auto;
-    height: 15vw;
-}
-
-.sidepanel {
-    display: flex;
-    width: 20vw;
-    height: auto;
-    background: rgb(46, 46, 46);
-    border-right: 5px rgb(54, 54, 54)0 solid;
-    align-content: space-evenly;
     flex-direction: column;
-    gap: 15px;
+    list-style: none;
 }
-
-.sidebutton {
+#sidebar>ul>li:first-child{
     display: flex;
-    width: 100%;
-    height: 10%;
-    color: rgb(196, 196, 196);
-    background-color: rgb(25, 25, 25);
+    justify-content: right;
     align-items: center;
-    justify-content: left;
-    overflow: hidden;
-    white-space: nowrap;
-    flex-shrink: 0;
-
-    font-size: 50px;
-    font-family: "Calibri", "Comic Sans MS";
-    font-weight: 700;
-    font-variant: small-caps;
+    padding-bottom: 20px;
+    padding-right: 10px;
 }
-
-button {
-    width: 100px;
+#sidebar>ul>li:last-child {
+    margin-top: auto;
+}
+/* Sidebar Links */
+#sidebar a {
+    display: flex;
+    align-items: center;
+    width: 100%;
     height: 50px;
-    box-sizing: border-box;
+    padding-left: 10px;
+    
+    background-color: var(--button);
+    
+    gap: 1em;
+    
+    text-decoration-line: none;
+    color: var(--text-color);
 }
-
-.btn {
-    background-color: rgb(62, 62, 62);
-    color: white;
-    border-radius: 1;
-    padding: 5px 5px;
+#sidebar button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
-
-.rounded {
-    border-radius: 10px;
+/* Content */
+span.close {
+    display: none;
 }
-
-.wake {
-    background-color: rgb(3, 55, 18);
+.card {
+    background-color: var(--card-color);
+    border: 3px solid var(--border-color);
 }
-
-.stop {
-    background-color: rgb(62, 22, 22);
+/* Icon */
+.icon {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    fill: #ffffff;
+}
+/* Hide Transition */
+.no-transition{
+    transition: none!important;
 }
